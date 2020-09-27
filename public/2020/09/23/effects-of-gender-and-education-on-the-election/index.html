@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.75.1" />
+
+
+<title>Effects of gender and education on the election - A Hugo website</title>
+<meta property="og:title" content="Effects of gender and education on the election - A Hugo website">
+
+
+  <link href='../../../../favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Effects of gender and education on the election</h1>
+
+    
+    <span class="article-date">2020-09-23</span>
+    
+
+    <div class="article-content">
+      
+
+
+<div id="abstract" class="section level1">
+<h1>Abstract</h1>
+<p>In this paper, with the 2019 Canadian Election Study online survey data, we perform some statistical analysis mainly on the factors gender and education. We find that women become more and more concerned about the election and people with high degree of education also care more about the election.</p>
+</div>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The main purpose of this project is to study the two factors that may affect the election and they are gender and education. This data set include 37882 observations and 22 variables and we mainly care about gender and education.</p>
+<p>The analysis is performed via bar charts since both gender and education are categorical variables.We mainly find that there are more women than men in this data set and people with Bachelor’s or College’s degree are the most.</p>
+</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<pre class="r"><code>decon%&gt;%
+  ggplot(aes(x=gender))+
+  geom_bar()</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>From the above output, we see that there are more women than men in this online survey dataset.</p>
+<pre class="r"><code>decon%&gt;%
+  ggplot(aes(x=education))+
+  geom_bar()</code></pre>
+<p><img src="../../../../post/2015-07-23-r-rmarkdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>sort(table(decon$education))
+## 
+##                                                     No schooling 
+##                                                               48 
+##                                           Some elementary school 
+##                                                               87 
+##                                 Don&#39;t know/ Prefer not to answer 
+##                                                               99 
+##                                      Completed elementary school 
+##                                                              288 
+##                                 Professional degree or doctorate 
+##                                                             1575 
+##                                      Some secondary/ high school 
+##                                                             1649 
+##                                                  Master&#39;s degree 
+##                                                             3207 
+##                                                  Some university 
+##                                                             3716 
+##      Some technical, community college, CEGEP, College Classique 
+##                                                             4394 
+##                                 Completed secondary/ high school 
+##                                                             5865 
+## Completed technical, community college, CEGEP, College Classique 
+##                                                             7702 
+##                                                Bachelor&#39;s degree 
+##                                                             9192</code></pre>
+<p>From the above output, we see that in this dataset, people with Bachelor’s degree takes the most proportion and then college.</p>
+</div>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
+<div id="data-and-graph-discussion" class="section level2">
+<h2>data and graph discussion</h2>
+<p>From the above data and graph, we see that there are more women than men in this online survey data set and that people with Bachelor’s degree or college degree take a large proportion in this data set. It tells us that women become more and more concerned about the election and people with high degree of education also care more about the election.</p>
+</div>
+<div id="weakness-and-next-steps" class="section level2">
+<h2>weakness and next steps</h2>
+<p>Here we only consider the effects of gender and education on the election and there may be other variables that may also affect the election and we should consider them in the future works.We should also include some two-variable relationships between them to better see the effects of them on the election.</p>
+</div>
+</div>
+<div id="reference" class="section level1">
+<h1>Reference</h1>
+<ul>
+<li><p>R Core Team (2020). R: A language and environment for statistical computing. R
+Foundation for Statistical Computing, Vienna, Austria. URL <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p></li>
+<li><p>Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software,
+4(43), 1686, <a href="https://doi.org/10.21105/joss.01686" class="uri">https://doi.org/10.21105/joss.01686</a></p></li>
+<li><p>Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little
+Easier.. R package version 0.1.0.</p></li>
+</ul>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="../../../../js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

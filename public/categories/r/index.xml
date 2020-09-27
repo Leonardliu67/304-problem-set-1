@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on A Hugo website</title>
+    <link>/categories/r/</link>
+    <description>Recent content in R on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Sep 2020 21:13:14 -0500</lastBuildDate><atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Effects of gender and education on the election</title>
+      <link>/2020/09/23/effects-of-gender-and-education-on-the-election/</link>
+      <pubDate>Wed, 23 Sep 2020 21:13:14 -0500</pubDate>
+      
+      <guid>/2020/09/23/effects-of-gender-and-education-on-the-election/</guid>
+      <description>Abstract In this paper, with the 2019 Canadian Election Study online survey data, we perform some statistical analysis mainly on the factors gender and education. We find that women become more and more concerned about the election and people with high degree of education also care more about the election.
+ Introduction The main purpose of this project is to study the two factors that may affect the election and they are gender and education.</description>
+    </item>
+    
+  </channel>
+</rss>

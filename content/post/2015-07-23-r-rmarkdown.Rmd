@@ -1,0 +1,76 @@
+---
+title: Effects of gender and education on the election
+author: Leonard Liu
+date: 2020-09-23T21:13:14-05:00
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+#install.packages("devtools")
+#devtools::install_github("hodgettsp/cesR")
+library(tidyverse)
+cesR::get_decon()
+
+```
+
+# Abstract
+
+In this paper, with the 2019 Canadian Election Study online survey data, we perform some statistical analysis mainly on the factors gender and education. We find that women become more and more concerned about the election and people with high degree of education also care more about the election. 
+
+
+# Introduction
+
+The main purpose of this project is to study the two factors that may affect the election and they are gender and education. This data set include 37882 observations and 22 variables and we mainly care about gender and education.
+
+The analysis is performed via bar charts since both gender and education are categorical variables.We mainly find that there are more women than men in this data set and people with Bachelor's or College's degree are the most.
+
+# Data
+
+```{r}
+decon%>%
+  ggplot(aes(x=gender))+
+  geom_bar()
+```
+
+From the above output, we see that there are more women than men in this online survey dataset. 
+
+```{r}
+decon%>%
+  ggplot(aes(x=education))+
+  geom_bar()
+sort(table(decon$education))
+
+```
+From the above output, we see that in this dataset, people with Bachelor's degree takes the most proportion and then college.
+
+
+# Discussion
+
+## data and graph discussion
+
+From the above data and graph, we see that there are more women than men in this online survey data set and that people with Bachelor's degree or college degree take a large proportion in this data set. It tells us that women become more and more concerned about the election and people with high degree of education also care more about the election.
+
+## weakness and next steps
+
+Here we only consider the effects of gender and education on the election and there may be other variables that may also affect the election and we should consider them in the future works.We should also include some two-variable relationships between them to better see the effects of them on the election.
+
+
+
+# Reference
+
+- R Core Team (2020). R: A language and environment for statistical computing. R
+  Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+- Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software,
+  4(43), 1686, https://doi.org/10.21105/joss.01686
+
+- Paul A. Hodgetts and Rohan Alexander (2020). cesR: Access the CES Datasets a Little
+  Easier.. R package version 0.1.0.
+  
+  
+  
+  
+  
+
